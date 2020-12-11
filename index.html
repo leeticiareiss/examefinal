@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" >
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+   
+  
+  <title>Exame Final</title>
+
+</head>
+<body>
+
+    <div id="app">
+        <main  class="container">
+            <h1 class="text-center">{{titulo}}</h1>
+    
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label for="descricao">Descrição</label>
+                    <input  class="form-control" v-model="itemParaAdicionar" placeholder="Descrição">
+                  </div>
+            
+                <div class="col-auto" style="padding-top: 41px;">
+                    <button  id="#adicionar" @click='adicionar' class="btn btn-primary mb-2">Adicionar</button>
+                  </div>
+                </div>
+    
+    
+    
+              <table class="table table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Remover</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <template v-for="(item, index) in lista">
+                    <tr>
+                        <td>{{item}}</td>
+                        <td>
+                            <button class="btn mb-2" @click="remover(index)">
+                                <i class="fa fa-trash" style="font-size:30px;color:red;"></i></i>
+                            </button>
+
+                        </td>
+                      </tr>
+                </template>
+                  
+                </tbody>
+              </table>
+        </main>
+    </div>
+    
+
+    <script src="index.js"></script>
+</body>
+</html>
